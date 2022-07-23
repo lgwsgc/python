@@ -73,6 +73,47 @@ def login(username, password):
         print("账户锁定")
 
 
-username = input("请输入用户名:")
-password = input("请输入密码:")
-login(username, password)
+# username = input("请输入用户名:")
+# password = input("请输入密码:")
+# login(username, password)
+
+
+# 找出最大值
+def max(iterable):
+    max = iterable[0]
+    for i in iterable:
+        if i > max:
+            max = i
+    print("max=", max)
+
+
+# 找出最大值
+def min(iterable):
+    min = iterable[0]
+    for i in iterable:
+        if i < min:
+            min = i
+    print("min:", min)
+
+
+list_1 = [1, 3, -2, 2, 6, 4, 76]
+list_1.sort()
+max(list_1)
+min(list_1)
+tuple1 = (1, 4, -1, 2, 6, 8, 3)
+max(tuple1)
+min(tuple1)
+# sort 排序 min 最小值 reverse排序
+# 判断是什么类型:isinstance(变量，类型关键字)
+
+
+def is_list(x):
+    x = int(isinstance(x, list))
+    if x == 1:
+        print("可以排序和翻转")
+    else:
+        print("不可以排序和翻转")
+
+
+x = (1, 2, 3)
+is_list(x)
