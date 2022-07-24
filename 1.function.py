@@ -167,7 +167,8 @@ list--->set tuple dict...
 """
 
 
-def add_sum(*args): # args = arguments
+# 一颗*代表元组，两颗*代表字典
+def add_sum(*args):  # args = arguments
     sum = 0
     if len(args) > 0:
         for i in args:
