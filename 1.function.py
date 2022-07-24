@@ -103,6 +103,8 @@ min(list_1)
 tuple1 = (1, 4, -1, 2, 6, 8, 3)
 max(tuple1)
 min(tuple1)
+
+
 # sort 排序 min 最小值 reverse排序
 # 判断是什么类型:isinstance(变量，类型关键字)
 
@@ -117,3 +119,64 @@ def is_list(x):
 
 x = (1, 2, 3)
 is_list(x)
+"""
+集合：无序不重复的序列
+    list tuple --->set()  
+"""
+s = {1, 2, 4, 2, 7, 0, 4}
+for i in s:
+    print(i)
+"""
+内置函数：
+    添加：add update
+    删除：remove discard pop clear
+运算相关：
+    - difference()差集
+    | union()并集
+    & intersection() 交集
+    ^ symmetric_difference() 异或
+可变和不可变：
+可变：地址不变，内容改变 list dict set
+不可变：只要内容改变，地址就改变 int str float tuple frozenset
+x=[1,2,3]
+x1 = x
+x = [1,2,3,4]
+print(x1) 输出结果x1=[1,2,3,4],原因，列表是可变的
+y = "asd"
+y1 = y
+y = "asdf"
+print(y1) 输出结果y1="asd",原因，字符串是不可变的
+
+类型转换：
+str--->list set ...
+list--->set tuple dict... 
+
+函数：增加代码的复用性，减少代码冗余
+"""
+
+"""
+可变参数
+定义方式：
+    def add(name，age，*args)
+        pass
+注意，可变参数放在后面，不变参数放在前面
+可变参数+关键字参数
+定义方式：
+    def add(a，b=10): #b=10是默认值，调用时可以传一个参数，也可以是两个，两个的话会覆盖掉默认值
+        pass                如果是3个以上也可以，传入参数是一次覆盖，可以使用关键字指定覆盖
+"""
+
+
+def add_sum(*args): # args = arguments
+    sum = 0
+    if len(args) > 0:
+        for i in args:
+            sum += i
+        print("sum = ", sum)
+    else:
+        print("无元素可加")
+
+
+add_sum(1, 2, 3, 4)
+
+add_sum(1, 3, 6)
