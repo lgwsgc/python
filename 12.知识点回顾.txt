@@ -1,0 +1,57 @@
+匿名函数：lambda 参数1，参数2，...: 返回
+
+def func(参数1，参数2，...):
+    函数体
+
+    return 值
+
+
+lambda x,y :x+y
+max()
+min()
+sorted()  ---->key=匿名函数
+map(func, list)
+filter(func,list) ----->filter的匿名函数要求返回值必须是Boolean类型，且Boolean条件才符合过滤条件
+reduce() -----> from functools import reduce 参数必须有两个
+
+递归函数：
+    1.自己调用自己
+    2.要有入口
+    3.出口
+
+文件操作：
+    open(path,mode) mode默认是rt:读txt文件
+    mode---->r, w, a...
+    s.read()
+    s.readline()
+    s.readlines()
+    s.readable()
+
+写文件
+with open('a1.txt', 'w') as file_out: ------>写文件是，如果指定文件不存在，则会自动创建，而读文件并不会
+         file_out.write('hello')
+write()
+writelines()
+writeable()
+
+os模块:
+os.path
+获取路径: 获取当前文件所在文件夹目录   directory 目录 文件夹
+path = os.path.dirrname(__file__)
+print(path)
+通过相对路径获得绝对路径:
+path = os.path.abspath('text.txt')
+print(path)
+获取当前文件的绝对路径:
+path = os.path.abspath(__file__)
+print(path)
+获取当前文件夹的目录
+path = os.getcwd()
+
+ # 截取文件名1
+filename = file[file.rfind('\\')+1:]
+ # 截取文件名2
+path = r'D:\Python\Git-python\venv\Scripts\python.exe D:/Python/Git-python/11.文件操作.py'
+result = os.path.split(path)
+print(result) # 获得一个元组(文件夹目录，文件名)
+print(result[1])

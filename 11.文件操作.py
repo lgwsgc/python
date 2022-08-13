@@ -104,22 +104,40 @@ os.path:
 path = os.path.dirname(__file__)  # 获取当前文件所在的文件目录(绝对路径: 具体路径: 从某盘到具体目录文夹)
 os.path.join(path, 'text_one.txt')
 '''
-# print(os.path)
-# path = os.path.dirname(__file__)  # 获取当前文件所在的文件目录(绝对路径: 具体路径: 从某盘到具体目录文夹) --->D:\Python\Git-python
+print(os.path)
+path = os.path.dirname(__file__)  # 获取当前文件所在的文件目录(绝对路径: 具体路径: 从某盘到具体目录文夹) --->D:\Python\Git-python
+path = os.path.join(path, '11.文件操作.py')
+print(path)
+print(type(path))
+# 获取当前文件夹的目录,类似os.path.dirname(__file__)
+# path = os.getcwd()
 # print(path)
-# print(type(path))
-
-
-with open(r'D:\Python\Git-python\files\0.bmp', 'rb') as file_in:
-    container_in = file_in.read()  # 读取文件内容
-    print(file_in.name)
-    file = file_in.name
-    filename = file[file.rfind('\\')+1:]  # 截取文件名
-    print(filename)
-    # path = os.path.dirname(__file__)
-    paths = os.path.join(r"D:\Python\Git-python\files2", filename)
-    with open(paths, 'wb') as file_out:
-        file_out.write(container_in)
+# r = os.path.isfile(path)
+# print(r)
+# r = os.path.isdir(path)
+# print(r)
+# ----------截取文件名--------------------------------------
+# path = r'D:\Python\Git-python\venv\Scripts\python.exe D:/Python/Git-python/11.文件操作.py'
+result = os.path.split(path)
+print(result)  # 获得一个元组(文件夹目录，文件名)
+print(result[1])
+# --------查看文件类型------------------
+result = os.path.splitext(path)  # 获得一个元组(文件绝对路径，文件格式)
+print(result)
+print(result[1])
+# --------查看文件大小--------
+size = os.path.getsize(path)  # 获取文件大小，单位字节
+print(size)
+# with open(r'D:\Python\Git-python\files\0.bmp', 'rb') as file_in:
+#     container_in = file_in.read()  # 读取文件内容
+#     print(file_in.name)
+#     file = file_in.name
+#     filename = file[file.rfind('\\')+1:]  # 截取文件名
+#     print(filename)
+#     # path = os.path.dirname(__file__)
+#     paths = os.path.join(r"D:\Python\Git-python\files2", filename)
+#     with open(paths, 'wb') as file_out:
+#         file_out.write(container_in)
 
 print('复制完成')
 
