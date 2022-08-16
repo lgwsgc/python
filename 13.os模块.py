@@ -1,5 +1,18 @@
 # os.path 里面的函数
+'''
+os.path 里面的函数
+        dirname() 获取指定文件的目录
+        join() 拼接获取新的路径
+        split()分割(文件目录，文件名)
+        splittext(分割(文件目录\\文件名，文件扩展名))
+        getsize(获取文件大小)
+
+        isabs() 判断是否是绝对路径
+        isfile() 判断是否是文件
+        isdir() 判断是否是文件夹
+'''
 # os中的函数:
+
 import os
 # ---------------------查看当前文件所在文件夹-----------------
 # file_all = os.getcwd()
@@ -81,7 +94,7 @@ import os
 #         print(path)
 #         # 判断是文件夹还是文件
 #         if os.path.isdir(path):
-#             # os.chdir(path)
+#             # os.chdir(path)   不用切换路径，在递归的时候，它会重新遍历文件
 #             # 调用函数(递归)
 #             copy(path, target_path)
 #         else:
