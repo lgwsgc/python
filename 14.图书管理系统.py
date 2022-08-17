@@ -57,7 +57,8 @@ def show_books():
 # register()
 # login_in()
 # show_books()
-# 图书馆借书案例
+
+# 图书馆借书案例 亟待完善
 def borrow_books():
     # global username
     # global password
