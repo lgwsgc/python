@@ -123,5 +123,25 @@ def func_file():
 
 
 # 调用
-x = func_file()  # finally比较特殊，return会返回finally中的返回值，覆盖掉之前的return
-print(x)
+# x = func_file()  # finally比较特殊，return会返回finally中的返回值，覆盖掉之前的return
+# print(x)
+
+
+# -----------自定义错误，抛出异常---------------------
+# raise (异常)
+def register():
+    username = input('请输入用户名:')
+    if len(username) < 6:
+        raise Exception('用户名长度需在6位以上')
+    else:
+        print('输入的用户名是:{}'.format(username))
+
+
+# register()
+try:
+    register()
+except Exception as err:
+    print(err)
+    print('注册失败')
+else:
+    print('注册成功')
