@@ -20,7 +20,7 @@ case1:
     except exception as err:
         print('出错了'，err)  # 可打印出位置错误类型，(除了已知的异常，剩下的都归为此类)
     finally:
-        无论一场是否存在都会执行的代码
+        无论异常是否存在都会执行的代码
 
 case2:获取Exception的错误原因
     try:
