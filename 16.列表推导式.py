@@ -1,3 +1,4 @@
+# -----------------列表推导式1(除了列表，还有字典，集合)-----------------------------
 # 列表推导式(除了列表，还有字典，集合)
 # 旧列表--> 新列表
 
@@ -47,3 +48,43 @@ def yuanzu():
 y = yuanzu()
 print(y)
 '''
+mul = []
+# -----------------列表推导式2-----------------------------
+dict1 = {'name': 'tom', 'salary': 5000}
+dict2 = {'name': 'tony', 'salary': 8000}
+dict3 = {'name': 'jack', 'salary': 4500}
+dict4 = {'name': 'lily', 'salary': 3000}
+
+list1 = [dict1, dict2, dict3, dict4]  # [{},{},{},{}]
+
+
+# 如果薪资大于5000涨200，小于等于5000涨500
+newlist1 = [{staff['name']: staff['salary'] + 200} if staff['salary'] > 5000 else {staff['name']: staff['salary'] + 500} for staff in list1]
+# print(newlist1)
+# --------------------------------------------------------------
+# def pailie(list1):
+#     newlist1 = []
+#     for staff in list1:
+#         if staff['salary'] > 5000:
+#             staff['salary'] += 200
+#             newlist1.append({staff['name']: staff['salary']})
+#         else:
+#             staff['salary'] += 500
+#             newlist1.append({staff['name']: staff['salary']})
+#     return newlist1
+
+# 调用
+# x = pailie(list1)
+# -----------------------------------------------------------------
+print('newlist1={}'.format(newlist1))
+
+# ----------------集合推导式-----------------------------
+list2 = [1, 3, 2, 4, 1, 2, 6, 7]
+
+set1 = {x for x in list2 if x > 4}
+print(set1)
+# ----------------字典推导式-----------------------------
+dict5 = {'a': 'A', 'b': 'B', 'c': 'C'}
+
+newdict = {value: key for key, value in dict5.items()}
+print(newdict)
