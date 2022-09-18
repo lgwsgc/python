@@ -143,8 +143,53 @@ n1 = g3.send(3)
 print("n1:", n1)
 n2 = g3.send(4)
 print("n2:", n2)
+
+
 # print(next(g3))
 # print(next(g3))
 # print(next(g3))
 # ---------生成器应用------------------
 # 进程 > 线程 > 协程
+
+
+def task1(n):
+    for i in range(n):
+        print('正在搬第{}块砖'.format(i + 1))
+        yield None
+
+
+def task2(n):
+    for j in range(n):
+        print('~~~~~~~~正在听第{}首歌~~~~~~'.format(j + 1))
+        yield None
+
+
+g4 = task1(6)
+g5 = task2(6)
+while True:
+    try:
+        g4.__next__()
+        g5.__next__()
+    except StopIteration:
+        print('搬砖结束啦。。。')
+        break
+# -------------generator~总结-----------------
+'''
+生成器: generator
+定义方式: 
+1.通过列表推导式得到生成器
+    g = ( x for x in range(6))
+2.借助函数完成：定义一个以 yield 关键字标识返回值的函数；调用刚刚创建的函数，即可创建一个生成器。
+    def func():
+        ...
+        yield
+        
+    g = func()
+产生元素：
+    1.next(g)  --->每次调用产生一个元素，如果元素全部产生完毕再次调用则会产生异常
+    2.生成器自己的方法:
+        g.__next__()
+        g.send(value)
+
+应用: 协程
+'''
